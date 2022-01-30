@@ -5,45 +5,43 @@
   --main-Dark-blue: hsl(218, 44%, 22%);
 }
 
-body,
 html {
-  margin: 0;
-  padding: 0;
+  /* box sizing:border box kommer räkna in width och padding i totala width. box-sizing = width innehåller längden av margin och padding. Utan box sizing så hade det varit width + padding + margin  https://i.redd.it/0f556gtz34g41.png */
+  box-sizing: border-box;
+  height: 100%;
 }
 
 body {
   background-color: var(--main-Light-gray);
   font-family: "Outfit", sans-serif;
+  /* root em, recommend only to fonts, Rem is relative to the font size of the root element (html element). If the font-size of the html element is 16 px, then 1rem = 16 px.*/
+  font-size: 0.94rem;
+  min-height: 100%;
 }
 
-.attribution {
-  font-size: 11px;
-  /* text-align: center; */
-}
+/* * selects all elements of a document. Till exempel p::before content:"read this";. inherit är att det tar från parent element i det här fallet html? body? */
 
-.attribution a {
-  color: hsl(228, 45%, 44%);
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 .card {
-  background: white;
-  margin: 50px;
-  padding: 25px;
-  border-radius: 25px;
+  background: var(--main-White);
+  padding: 1rem 1rem 2.7rem 1rem;
+  /* rem här syftar på body {font-size?}*/
+  border-radius: 1.25rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  /* margin-left: 0;
-  margin-right: 0; */
-  width: 15%;
-  /* align-items: center; */
-  /* display: flex; */
-  /* justify-content: center; */
-  /* flex-direction: row; */
-}
-
-.flex-container {
-  margin-top: 225px;
-  display: flex;
-  justify-content: center;
+  max-width: 20rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  top: 50%;
+  width: 84.6%;
 }
 
 .container {
@@ -54,12 +52,15 @@ body {
 
 .picture {
   width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1.87rem;
+  object-fit: cover;
 }
 
-img {
-  border-radius: 25px;
+.card__body__title {
+  padding-bottom: 1rem;
 }
 
-p {
-  font-size: 15px;
+.card__body__text {
+  padding: 0 1em;
 }
