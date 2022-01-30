@@ -15,7 +15,7 @@ View page: (https://alexanderwiklow.github.io/QR-code-component/)
 
 ### Screenshot
 
-![](.assets/images/Screenshot.png)
+![](assets/images/Screenshot.png)
 
 ## My process
 
